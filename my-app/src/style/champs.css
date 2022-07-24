@@ -5,3 +5,8 @@
 .textAlignRight{
     text-align: right;
 }
+
+.champIconList{
+    grid-area: champIconList;
+    height: 100vh;
+}

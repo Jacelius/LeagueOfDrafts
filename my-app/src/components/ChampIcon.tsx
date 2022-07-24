@@ -1,15 +1,20 @@
-function ChampIcon() {
-    return (
-        <div className="champ-icon">
-            <img src={getChampImgSrc()} />
-        </div>
-    );
-
-
+interface ChampIconProps {
+    champName: string;
 }
 
-function getChampImgSrc() {
-    return "https://ddragon.leagueoflegends.com/cdn/9.21.1/img/champion/Ashe.png";
+function ChampIcon({champName}: ChampIconProps) {
+    const champImgSrc = getChampImgSrc(champName);
+    return (
+        <div className="champ-icon">
+            <img src={champImgSrc} alt={champName}/>
+        </div>
+    );
+}
+
+function getChampImgSrc(champName: string) { // this doesn't work, sadly :(
+    const champImgSrc = "/assets/tiles/" + champName + "_0.jpg";
+    
+    return champImgSrc; // "https://ddragon.leagueoflegends.com/cdn/9.21.1/img/champion/Ashe.png"
 }
 
 export default ChampIcon;

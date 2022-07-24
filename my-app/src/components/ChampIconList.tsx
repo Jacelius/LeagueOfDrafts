@@ -7,13 +7,14 @@ interface ChampIconListProps {
 
 function ChampIconList( {side} : ChampIconListProps ) {
     let textAlign = getTextAlign(side);
+    // TODO: border color based on side
     return (
-            <div className={textAlign}>
-                <ChampIcon/>
-                <ChampIcon/>
-                <ChampIcon/>
-                <ChampIcon/>
-                <ChampIcon/>
+            <div className={"champIconList " + textAlign}>
+                <ChampIcon champName="Ahri"/>
+                <ChampIcon champName="Ashe"/>
+                <ChampIcon champName="Ezreal"/>
+                <ChampIcon champName="Pyke"/>
+                <ChampIcon champName="Zilean"/>
             </div>  
         )
 }
