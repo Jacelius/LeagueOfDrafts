@@ -1,0 +1,4 @@
+.guessBox{
+    grid-area: guessBox;
+    background-color: blueviolet;
+}

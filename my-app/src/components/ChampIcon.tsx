@@ -11,7 +11,7 @@ function ChampIcon({champName}: ChampIconProps) {
     );
 }
 
-function getChampImgSrc(champName: string) { // this doesn't work, sadly :(
+function getChampImgSrc(champName: string) { 
     const champImgSrc = "/assets/tiles/" + champName + "_0.jpg";
     
     return champImgSrc; // "https://ddragon.leagueoflegends.com/cdn/9.21.1/img/champion/Ashe.png"

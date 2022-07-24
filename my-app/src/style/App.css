@@ -19,8 +19,11 @@
 
 .container {
   display: grid;
+  grid-gap: 1vh;
   grid-template-columns: auto;
   grid-template-rows: auto;
-  grid-template-areas: ". buttons ." 
-                       "champIconList champIconList champIconList";
+  grid-template-areas: 
+                       "header header header header"
+                       "buttons buttons buttons buttons" 
+                       "champIconList champIconList champIconList champIconList";
 }
