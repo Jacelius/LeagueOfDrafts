@@ -8,10 +8,14 @@ function GuessBox() {
     const [incorrectCount, setIncorrectCount] = useState(0);
     return(
         <div className="guessBox">
-            <Button variant="outline-primary"> Blue </Button>
-            <Button variant="outline-danger"> Red </Button>
+           <Button variant="outline-primary"> Blue </Button>
+           <Button variant="outline-danger"> Red </Button> 
         </div>
     )
+}
+
+function didPlayerWin() {
+    return true;
 }
 
 export default GuessBox;

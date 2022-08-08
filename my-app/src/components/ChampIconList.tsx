@@ -6,11 +6,11 @@ interface ChampIconListProps {
 }
 
 function ChampIconList( {side} : ChampIconListProps ) {
-    let textAlign = getTextAlign(side);
+    let borderColor = getBorderColorFromSide(side);
     // TODO: get champNames based on actual game
     // TODO: border color based on side
     return (
-            <div className={"champIconList " + textAlign}>
+            <div className={"champIconList " + borderColor}>
                 <ChampIcon champName="Ahri"/>
                 <ChampIcon champName="Ashe"/>
                 <ChampIcon champName="Ezreal"/>
@@ -20,10 +20,10 @@ function ChampIconList( {side} : ChampIconListProps ) {
         )
 }
 
-function getTextAlign(side: string) {
-    let textAlign = "";
-    side === "Blue" ? textAlign = "textAlignLeft" :  textAlign = "textAlignRight";
-    return textAlign
+function getBorderColorFromSide(side: string) {
+    let borderColor = "";
+    side === "Blue" ? borderColor = "borderColorBlue" :  borderColor = "borderColorRed";
+    return borderColor
 }
 
 export default ChampIconList;

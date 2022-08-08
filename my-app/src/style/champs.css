@@ -6,7 +6,16 @@
     text-align: right;
 }
 
+.borderColorBlue{
+    border: 5px solid blue;
+}
+
+.borderColorRed{
+    border: 5px solid red;
+}
+
 .champIconList{
-    grid-area: champIconList;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
 }

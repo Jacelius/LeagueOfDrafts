@@ -1,4 +1,6 @@
 .guessBox{
-    grid-area: guessBox;
-    background-color: blueviolet;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
 }
