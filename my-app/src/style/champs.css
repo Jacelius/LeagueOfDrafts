@@ -8,14 +8,21 @@
 
 .borderColorBlue{
     border: 5px solid blue;
+    border-radius: 25px;
 }
 
 .borderColorRed{
     border: 5px solid red;
+    border-radius: 25px;
 }
 
 .champIconList{
     display: flex;
     flex-direction: column;
-    height: 75vh;
+    height: 100%;
+}
+
+img {
+    width: 31%;
+    border-radius: 5px;
 }
