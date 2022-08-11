@@ -3,6 +3,16 @@ A game about drafting in League of Legends
 
 Planning to use Riot API to select a random game.
 
+## Steps needed
+
+* 1: API key needed to use Riot API - atm daily updates are needed
+* 2: Get "random" matches associated with given rank
+* 3: Know the winner of each match, but don't show that to user
+* 3b: Show more details of match (eg. bans, pickorder..)
+* 4: Determine if user guess is correct/wrong
+* 5: Show user stats about guesses
+* 6: Store user stats in database (user system + db needed for this step)
+
 
 ## Plan 
 _u/bongdong420 - reddit idea_
