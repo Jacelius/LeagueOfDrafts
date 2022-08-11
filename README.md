@@ -1,4 +1,6 @@
+
 # LeagueOfDrafts
+
 A game about drafting in League of Legends
 
 Planning to use Riot API to select a random game.
@@ -13,13 +15,14 @@ Planning to use Riot API to select a random game.
 * 5: Show user stats about guesses
 * 6: Store user stats in database (user system + db needed for this step)
 
+## Plan
 
-## Plan 
-_u/bongdong420 - reddit idea_
+### u/bongdong420 - reddit idea
+
 > The best way I see to collect matches is to get a list of summonerIDs from each tier/divison using league-v4 then getting their accountIDs using summoner-v4 then getting their match history using match-v4 then using games from their match history.
 
-_Riot API suggestion_
- 
+### Riot API suggestion
+
 Match Data
 The best way to collect a large set of matches is not straightforward. Typically you need code that does this:
 
@@ -30,4 +33,3 @@ Success! You have a ton of match IDs, from there, you can fetch their timelines 
 Alternatively, Canisback on the Discord currently hosts a list of matches IDs that you can use to pull summoners from the matches/{matchId} endpoints. These lists are provided for free to the community for use, and may go down or stop being updated at any time.
 
 <https://canisback.com/matchId/matchlist_eun1.json>
-
