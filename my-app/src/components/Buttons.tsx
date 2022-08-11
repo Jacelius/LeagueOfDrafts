@@ -25,6 +25,8 @@ function Buttons() {
           <Dropdown.Item onClick={() => setTier("Master")}>Master</Dropdown.Item>
           <Dropdown.Item onClick={() => setTier("Grandmaster")}>Grandmaster</Dropdown.Item>
           <Dropdown.Item onClick={() => setTier("Challenger")}>Challenger</Dropdown.Item>
+          <Dropdown.Item onClick={() => setTier("Professional")}>Professional</Dropdown.Item>
+
         </Dropdown.Menu>
       </Dropdown>
     </div>
