@@ -54,7 +54,6 @@ async function getMatch(matchID: string){
 }
 
 function whichTeamWon(match: any){
-    console.log("match", match)
     if (match.info.teams[0].win === true) {
         return "Blue"
     } else {

@@ -46,7 +46,7 @@ function GuessBox({ matches, setMatches } : matchesProps) {
         })
     }
 
-    function showGuessResult(win: boolean) {
+    function showGuessResult(win: boolean) { // would be fun to do some sort of animation here
         if (win) {
             console.log("You Win!")
         } else {

@@ -18,11 +18,17 @@ function ChampIconList( {side, matches, setMatches}: ChampIconListProps ) {
     // TODO: get champNames based on actual game
     // TODO optimization: champIconlist should only hold 1 single match, or maybe even only the champNames
     const [champNames, setChampNames] = useState<string[]>([]);
+    const [champIcons, setChampIcons] = useState<any[]>([]);
 
     useEffect(() => {
         if (matches.length > 0) {
             getMatch(matches[0]).then(match => {
-                console.log("champNames", getChampNamesFromMatch(match, side))
+                const champNames = getChampNamesFromMatch(match, side);
+                console.log("champNames", champNames)
+                const champIcons = champNames.map(champName => {
+                    return <ChampIcon champName={champName} />
+                })
+                setChampIcons(champIcons);
                 setChampNames(getChampNamesFromMatch(match, side))
             })
         }
@@ -30,11 +36,7 @@ function ChampIconList( {side, matches, setMatches}: ChampIconListProps ) {
 
     return (
             <div className={"champIconList " + borderColor}>
-                <ChampIcon champName="Ahri"/>
-                <ChampIcon champName="Ashe"/>
-                <ChampIcon champName="Ezreal"/>
-                <ChampIcon champName="Pyke"/>
-                <ChampIcon champName="Zilean"/>
+                {champIcons}
             </div>  
         )
 }
