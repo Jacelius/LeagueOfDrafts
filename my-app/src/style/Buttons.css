@@ -1,3 +1,4 @@
 .buttons{
-    grid-area: buttons;
+    display: flex;
+    flex-direction: row;
 }
