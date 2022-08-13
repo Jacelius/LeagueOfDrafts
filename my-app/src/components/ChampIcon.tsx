@@ -2,13 +2,15 @@ import '../style/champs.css';
 
 interface ChampIconProps {
     champName: string;
+    role: string;
 }
 
-function ChampIcon({champName}: ChampIconProps) {
+function ChampIcon({champName, role}: ChampIconProps) {
     const champImgSrc = getChampImgSrc(champName);
     return (
         <div className="champ-icon">
             <img src={champImgSrc} alt={champName}/>
+            <p>Role: {role}</p>
         </div>
     );
 }

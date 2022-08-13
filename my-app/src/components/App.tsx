@@ -9,6 +9,7 @@ function App() {
   // TODO: score system.. how to keep track of score?
   // TODO: grid layout with guessbox and champiconlist
   const [matches, setMatches] = useState<string[]>([]);
+  const[latestMatch, setLatestMatch] = useState<any>();
 
   return (
     <div className="App">
@@ -16,9 +17,9 @@ function App() {
       <Header />
       <Buttons matches={matches} setMatches={setMatches} />
       <div className="grid-container">
-        <ChampIconList side="Blue" match={matches[1]}></ChampIconList>
-        <GuessBox matches = {matches} setMatches={setMatches}/>
-        <ChampIconList side="Red" match={matches[1]}></ChampIconList>
+        <ChampIconList side="Blue" match={matches[2]}></ChampIconList>
+        <GuessBox match = {matches[2]} />
+        <ChampIconList side="Red" match={matches[2]}></ChampIconList>
       </div>
     </div>
   );

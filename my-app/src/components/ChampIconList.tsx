@@ -20,9 +20,9 @@ function ChampIconList( {side, match} : ChampIconListProps) {
         if (match != null) {
             getMatch(match).then(match => {
                 const champNames = getChampNamesFromMatch(match, side);
-                console.log("champNames", champNames)
+                const roles = getRolesFromMatch(match, side); // TODO: put this in ChampIcon component
                 const champIcons = champNames.map(champName => {
-                    return <ChampIcon champName={champName} />
+                    return <ChampIcon champName={champName} role={"ROLE"}/>
                 })
                 setChampIcons(champIcons);
                 setChampNames(getChampNamesFromMatch(match, side))
@@ -53,6 +53,23 @@ function getChampNamesFromMatch(match: any, side: string) {
         }
     }
     return champNames
+}
+
+function getRolesFromMatch(match: any, side: string) {
+    let roles: string[] = [];
+    if (side === "Blue") {
+        // go through participants 0-4
+        for (let i = 0; i < 5; i++) {
+            roles.push(match.info.participants[i].teamPosition);
+        }
+    }
+    else if (side === "Red") {
+        // go through participants 5-9
+        for (let i = 5; i < 10; i++) {
+            roles.push(match.info.participants[i].teamPosition);
+        }
+    }
+    return roles
 }
 
 function getBorderColorFromSide(side: string) {
