@@ -3,17 +3,13 @@ import '../style/champs.css';
 import { useState, useEffect } from 'react';
 import { getMatch } from '../util';
 
-interface matchesProps {
-    matches: string[];
-    setMatches: (matches: string[]) => void;
-}
-
-interface ChampIconListProps extends matchesProps{
+interface ChampIconListProps {
     side: string;
+    match: any;
 }
 
 
-function ChampIconList( {side, matches, setMatches}: ChampIconListProps ) {
+function ChampIconList( {side, match} : ChampIconListProps) {
     let borderColor = getBorderColorFromSide(side);
     // TODO: get champNames based on actual game
     // TODO optimization: champIconlist should only hold 1 single match, or maybe even only the champNames
@@ -21,8 +17,8 @@ function ChampIconList( {side, matches, setMatches}: ChampIconListProps ) {
     const [champIcons, setChampIcons] = useState<any[]>([]);
 
     useEffect(() => {
-        if (matches.length > 0) {
-            getMatch(matches[0]).then(match => {
+        if (match != null) {
+            getMatch(match).then(match => {
                 const champNames = getChampNamesFromMatch(match, side);
                 console.log("champNames", champNames)
                 const champIcons = champNames.map(champName => {
@@ -32,7 +28,7 @@ function ChampIconList( {side, matches, setMatches}: ChampIconListProps ) {
                 setChampNames(getChampNamesFromMatch(match, side))
             })
         }
-    }, [matches]); 
+    }, [match]); 
 
     return (
             <div className={"champIconList " + borderColor}>

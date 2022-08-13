@@ -16,9 +16,9 @@ function App() {
       <Header />
       <Buttons matches={matches} setMatches={setMatches} />
       <div className="grid-container">
-        <ChampIconList side="Blue" matches={matches} setMatches={setMatches}></ChampIconList>
+        <ChampIconList side="Blue" match={matches[1]}></ChampIconList>
         <GuessBox matches = {matches} setMatches={setMatches}/>
-        <ChampIconList side="Red" matches={matches} setMatches={setMatches}></ChampIconList>
+        <ChampIconList side="Red" match={matches[1]}></ChampIconList>
       </div>
     </div>
   );
