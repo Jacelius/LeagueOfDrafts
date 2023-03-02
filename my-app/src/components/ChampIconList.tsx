@@ -11,8 +11,6 @@ interface ChampIconListProps {
 
 function ChampIconList( {side, match} : ChampIconListProps) {
     let borderColor = getBorderColorFromSide(side);
-    // TODO: get champNames based on actual game
-    // TODO optimization: champIconlist should only hold 1 single match, or maybe even only the champNames
     const [champNames, setChampNames] = useState<string[]>([]);
     const [champIcons, setChampIcons] = useState<any[]>([]);
 

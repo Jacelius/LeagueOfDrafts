@@ -6,8 +6,6 @@ import Header from './Header';
 import {useState} from 'react';
 
 function App() {
-  // TODO: score system.. how to keep track of score?
-  // TODO: grid layout with guessbox and champiconlist
   const [matches, setMatches] = useState<string[]>([]);
   const[latestMatch, setLatestMatch] = useState<any>();
 
