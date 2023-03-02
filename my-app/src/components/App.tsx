@@ -6,18 +6,19 @@ import Header from './Header';
 import {useState} from 'react';
 
 function App() {
-  const [matches, setMatches] = useState<string[]>([]);
+  const [matches, setMatches] = useState<any[]>([]);
   const[latestMatch, setLatestMatch] = useState<any>();
+  
 
   return (
     <div className="App">
       
       <Header />
-      <Buttons matches={matches} setMatches={setMatches} />
+      <Buttons matches={matches} setMatches={setMatches} latestMatch={latestMatch} setLatestMatch={setLatestMatch} />
       <div className="grid-container">
-        <ChampIconList side="Blue" match={matches[2]}></ChampIconList>
-        <GuessBox match = {matches[2]} />
-        <ChampIconList side="Red" match={matches[2]}></ChampIconList>
+        <ChampIconList side="Blue" match={latestMatch}></ChampIconList>
+        <GuessBox match = {latestMatch} />
+        <ChampIconList side="Red" match={latestMatch}></ChampIconList>
       </div>
     </div>
   );

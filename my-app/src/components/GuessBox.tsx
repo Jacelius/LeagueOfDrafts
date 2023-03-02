@@ -31,8 +31,10 @@ function GuessBox({ match } : GuessBoxProps) {
             if (choice === "Blue") {
                 if (latestMatchRes === "Blue") {
                     setCorrectCount(correctCount + 1);
+                    showGuessResult(true);
                 } else {
                     setIncorrectCount(incorrectCount + 1);
+                    showGuessResult(false);
                 }
             }
             else if (choice === "Red") {
@@ -47,9 +49,9 @@ function GuessBox({ match } : GuessBoxProps) {
 
     function showGuessResult(win: boolean) { // would be fun to do some sort of animation here
         if (win) {
-            console.log("You Win!")
+            alert("Correct!")
         } else {
-            console.log("You Lose!")
+            alert("Wrong :(")
         }
     }
 

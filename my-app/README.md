@@ -1,8 +1,13 @@
-# Getting Started with Create React App
+# League of Drafts
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a project about guessing the winner of LoL matches. It is a work in progress.
+Currently, you need a local proxy server running (cors_anywhere) and a fresh Riot API key in a .env (in the project root, variable called REACT_APP_RIOT_API_KEY).
 
 ## Available Scripts
+
+To run the proxy, go inside src and run:
+
+`node proxy.js`
 
 In the project directory, you can run:
 

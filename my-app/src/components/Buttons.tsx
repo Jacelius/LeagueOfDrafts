@@ -7,17 +7,19 @@ import {getSummonerByName, getMatchesFromPUUID, getMatch} from '../util'
 interface matchesProps {
   matches: string[];
   setMatches: (matches: string[]) => void;
+  latestMatch: string;
+  setLatestMatch: (latestMatch: string) => void;
 }
 
-function Buttons({matches, setMatches}: matchesProps) {
+function Buttons({matches, setMatches, latestMatch, setLatestMatch}: matchesProps) {
   const [tier, setTier] = useState("Random Tier"); // idea: color change based on rank
   const [queue, setQueue] = useState("Ranked Solo/Duo"); // idea: color change based on queue
-  const [latestMatch, setLatestMatch] = useState<any>();
-
+  const PUUID = process.env.REACT_APP_JACELIUS_PUUID || "";
   async function getMatches() {
-    const matchList = await getMatchesFromPUUID("2pCBdfWyhMmnbsWEGhRsAROv7MUDWYzg3g6Yhvq_vjMKx-p8HilPiegrnyEZJR6HO-xkAVkpRYXB8g", 20)
+    const matchList = await getMatchesFromPUUID(PUUID, 20)
     console.log("matchList", matchList)
     setMatches(matchList)
+    setLatestMatch(matchList[0])
   }
 
   return (

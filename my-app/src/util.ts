@@ -29,9 +29,8 @@ async function getMatchesFromPUUID(puuid: string, count: number) {
             "X-Riot-Token": process.env.REACT_APP_RIOT_API_KEY || "",
             "X-Requested-With": "XMLHttpRequest"
         }
-    }).then(resp => resp.json()).then(function(data) {
-        // console.log(data);
-        return data
+    }).then(resp => resp.json()).then(function(matches) {
+        return matches
     })
 
 }
@@ -49,9 +48,9 @@ async function getMatch(matchID: string){
             "X-Requested-With": "XMLHttpRequest"
         }
     }).then(resp => resp.json())
-    .then(function(data) {
-        console.log("data", data);
-        return data
+    .then(function(match) {
+        console.log("match", match);
+        return match
     }).catch(function(error) {
         console.log(error);
     })
