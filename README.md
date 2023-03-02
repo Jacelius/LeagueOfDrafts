@@ -1,7 +1,7 @@
 
 # LeagueOfDrafts
 
-A game about drafting in League of Legends
+A game about drafting in League of Legends. The goal is to guess the winner of a match based on the draft.
 
 Planning to use Riot API to select a random game.
 
