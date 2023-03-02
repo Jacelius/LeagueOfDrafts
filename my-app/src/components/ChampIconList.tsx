@@ -21,9 +21,7 @@ function ChampIconList( {side, match} : ChampIconListProps) {
             let roles: string[];
             if (!matchIsARAM(match)) {
                 roles = getRolesFromMatch(match, side);
-                console.log("Roles", roles)
             } else {
-                console.log("ARAM match")
                 roles = ["Poro", "Poro", "Poro", "Poro", "Poro"]
             }
             const champIcons = champNames.map((champName, index) => {
