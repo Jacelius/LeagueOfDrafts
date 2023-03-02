@@ -16,7 +16,8 @@ function Buttons({matchIDs, setMatchIDs, latestMatch, setLatestMatch, nextMatch}
   const [tier, setTier] = useState("Random Tier"); // idea: color change based on rank
   const [queue, setQueue] = useState("Ranked Solo/Duo"); // idea: color change based on queue
   const PUUID = process.env.REACT_APP_JACELIUS_PUUID || "";
-  async function getmatchIDs() {
+  
+  async function getMatchIDs() {
     const matchIDList = await getMatchIDsFromPUUID(PUUID, 20)
     console.log("match id list", matchIDList)
     setMatchIDs(matchIDList)
@@ -56,7 +57,7 @@ function Buttons({matchIDs, setMatchIDs, latestMatch, setLatestMatch, nextMatch}
           </Dropdown.Menu>
       </Dropdown>
 
-      <Button onClick={() => getmatchIDs()}> Fetch Jacelius' matchIDs </Button>
+      <Button onClick={() => getMatchIDs()}> Fetch Jacelius' matchIDs </Button>
       <Button onClick={() => nextMatch()}> Next match </Button>
     </div>
   );

@@ -33,7 +33,7 @@ function App() {
       <Buttons matchIDs={matchIDs} setMatchIDs={setMatchIDs} latestMatch={latestMatch} setLatestMatch={setLatestMatch} nextMatch={nextMatch} />
       <div className="grid-container">
         <ChampIconList side="Blue" match={latestMatch}></ChampIconList>
-        <GuessBox match={latestMatch} />
+        <GuessBox match={latestMatch} nextMatch={nextMatch}/>
         <ChampIconList side="Red" match={latestMatch}></ChampIconList>
       </div>
     </div>

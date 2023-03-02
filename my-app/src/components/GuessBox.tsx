@@ -5,12 +5,10 @@ import { whichTeamWon } from '../util';
 
 interface GuessBoxProps {
     match: any;
+    nextMatch: () => void;
 }
-  
-// central component with all the buttons and logic for the game
-// IDEA: add image of rank tier for current game - needs some sort of logic to determine which tier to show (average)
 
-function GuessBox({ match } : GuessBoxProps) {
+function GuessBox({ match, nextMatch } : GuessBoxProps) {
     const [correctCount, setCorrectCount] = useState(0);
     const [incorrectCount, setIncorrectCount] = useState(0);
 
@@ -28,10 +26,13 @@ function GuessBox({ match } : GuessBoxProps) {
         else if (choice === "Red") {
             if (latestMatchRes === "Red") {
                 setCorrectCount(correctCount + 1);
+                showGuessResult(true);
             } else {
                 setIncorrectCount(incorrectCount + 1);
+                showGuessResult(false);
             }
-        } 
+        }
+        nextMatch() 
     }
     
     function showGuessResult(win: boolean) { // would be fun to do some sort of animation here

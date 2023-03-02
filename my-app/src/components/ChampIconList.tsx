@@ -18,8 +18,8 @@ function ChampIconList( {side, match} : ChampIconListProps) {
         if (match != null) {
             const champNames = getChampNamesFromMatch(match, side);
             const roles = getRolesFromMatch(match, side); // TODO: put this in ChampIcon component
-            const champIcons = champNames.map(champName => {
-                return <ChampIcon key={champName} champName={champName} role={"ROLE"}/>
+            const champIcons = champNames.map((champName, index) => {
+                return <ChampIcon key={champName} champName={champName} role={roles[index]}/>
             })
             setChampIcons(champIcons);
             setChampNames(getChampNamesFromMatch(match, side))
