@@ -1,3 +1,5 @@
+import { Match } from "./types/Match";
+
 async function getSummonerByName(name: string) {
     const url = process.env.REACT_APP_PROXY_URL + "https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + name;
     return await fetch(url, {
@@ -56,7 +58,7 @@ async function getMatch(matchID: string){
     })
 }
 
-function whichTeamWon(match: any){
+function whichTeamWon(match: Match){
     console.log("checking winner team for match id: " + match.info.gameId)
     if (match.info.teams[0].win === true) {
         return "Blue"
