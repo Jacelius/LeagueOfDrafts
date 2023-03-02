@@ -11,15 +11,20 @@ function App() {
   const [latestMatch, setLatestMatch] = useState<any>(); // match object
   
   async function nextMatch() {
-    console.log("next match")
     // get index of latest match, and set latest match to the next match in the array
-    const currIndex = matchIDs.indexOf(latestMatch);
-    if (currIndex === matchIDs.length - 1) {
+    const currIndex = matchIDs.indexOf(latestMatch.metadata.matchId);
+    if (currIndex === -1) {
+      console.log("latest match not found in matchIDs")
+      return;
+    } else if (currIndex === matchIDs.length - 1) {
       console.log("no more matchIDs")
       return;
     }
-    setLatestMatch(await getMatch(matchIDs[currIndex + 1]));
-
+    getMatch(matchIDs[currIndex + 1])
+    .then((match) => {
+      setLatestMatch(match);
+      console.log("latest match set to", match.info.gameId)
+    })
   }
 
   return (
