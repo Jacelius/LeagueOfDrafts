@@ -12,7 +12,6 @@ async function getSummonerByName(name: string) {
         }
     }).then(resp => resp.json())
     .then(function(data) {
-        // console.log(data);
         return data
     }).catch(function(error) {
         console.log(error);
@@ -22,7 +21,6 @@ async function getSummonerByName(name: string) {
 async function getMatchIDsFromPUUID(puuid: string, count: number) {
     console.log("trying to fetch matches from puuid: " + puuid, "count: " + count)
     const url = process.env.REACT_APP_PROXY_URL + "https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/" + puuid + "/ids?start=0&count=" + count;
-    console.log("url", url)
     return await fetch(url, {
         method: "GET",
         headers: {
@@ -40,7 +38,6 @@ async function getMatchIDsFromPUUID(puuid: string, count: number) {
 async function getMatch(matchID: string){
     console.log("trying to fetch match id: " + matchID)
     const url = process.env.REACT_APP_PROXY_URL + "https://europe.api.riotgames.com/lol/match/v5/matches/" + matchID;
-    // console.log("url", url)
     return await fetch(url, {
         method: "GET",
         headers: {
@@ -51,7 +48,6 @@ async function getMatch(matchID: string){
         }
     }).then(resp => resp.json())
     .then(function(match) {
-        // console.log("getMatch fetched match:", match);
         return match
     }).catch(function(error) {
         console.log(error);
