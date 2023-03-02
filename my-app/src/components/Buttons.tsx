@@ -2,25 +2,25 @@ import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown';
 import '../style/Buttons.css';
 import {useState} from 'react';
-import {getSummonerByName, getMatchesFromPUUID, getMatch} from '../util'
+import {getSummonerByName, getMatchIDsFromPUUID, getMatch} from '../util'
 
-interface matchesProps {
-  matches: string[];
-  setMatches: (matches: string[]) => void;
+interface matchIDsProps {
+  matchIDs: string[];
+  setMatchIDs: (matchIDs: any[]) => void;
   latestMatch: string;
-  setLatestMatch: (latestMatch: string) => void;
+  setLatestMatch: (latestMatch: any) => void;
   nextMatch: () => void;
 }
 
-function Buttons({matches, setMatches, latestMatch, setLatestMatch, nextMatch}: matchesProps) {
+function Buttons({matchIDs, setMatchIDs, latestMatch, setLatestMatch, nextMatch}: matchIDsProps) {
   const [tier, setTier] = useState("Random Tier"); // idea: color change based on rank
   const [queue, setQueue] = useState("Ranked Solo/Duo"); // idea: color change based on queue
   const PUUID = process.env.REACT_APP_JACELIUS_PUUID || "";
-  async function getMatches() {
-    const matchList = await getMatchesFromPUUID(PUUID, 20)
-    console.log("matchList", matchList)
-    setMatches(matchList)
-    setLatestMatch(matchList[0])
+  async function getmatchIDs() {
+    const matchIDList = await getMatchIDsFromPUUID(PUUID, 20)
+    console.log("match id list", matchIDList)
+    setMatchIDs(matchIDList)
+    setLatestMatch(await getMatch(matchIDList[0]))
   }
 
   return (
@@ -56,7 +56,7 @@ function Buttons({matches, setMatches, latestMatch, setLatestMatch, nextMatch}: 
           </Dropdown.Menu>
       </Dropdown>
 
-      <Button onClick={() => getMatches()}> Fetch Jacelius' matches </Button>
+      <Button onClick={() => getmatchIDs()}> Fetch Jacelius' matchIDs </Button>
       <Button onClick={() => nextMatch()}> Next match </Button>
     </div>
   );

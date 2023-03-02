@@ -16,15 +16,13 @@ function ChampIconList( {side, match} : ChampIconListProps) {
 
     useEffect(() => {
         if (match != null) {
-            getMatch(match).then(match => {
-                const champNames = getChampNamesFromMatch(match, side);
-                const roles = getRolesFromMatch(match, side); // TODO: put this in ChampIcon component
-                const champIcons = champNames.map(champName => {
-                    return <ChampIcon key={champName} champName={champName} role={"ROLE"}/>
-                })
-                setChampIcons(champIcons);
-                setChampNames(getChampNamesFromMatch(match, side))
+            const champNames = getChampNamesFromMatch(match, side);
+            const roles = getRolesFromMatch(match, side); // TODO: put this in ChampIcon component
+            const champIcons = champNames.map(champName => {
+                return <ChampIcon key={champName} champName={champName} role={"ROLE"}/>
             })
+            setChampIcons(champIcons);
+            setChampNames(getChampNamesFromMatch(match, side))
         }
     }, [match]); 
 

@@ -3,26 +3,32 @@ import Buttons from './Buttons';
 import ChampIconList from './ChampIconList';
 import GuessBox from './GuessBox';
 import Header from './Header';
-import {useState} from 'react';
+import { useState } from 'react';
+import { getMatch } from '../util';
 
 function App() {
-  const [matches, setMatches] = useState<any[]>([]);
-  const [latestMatch, setLatestMatch] = useState<any>();
+  const [matchIDs, setMatchIDs] = useState<string[]>([]);
+  const [latestMatch, setLatestMatch] = useState<any>(); // match object
   
-  function nextMatch() {
+  async function nextMatch() {
     console.log("next match")
     // get index of latest match, and set latest match to the next match in the array
-    const currIndex = matches.indexOf(latestMatch);
-    setLatestMatch(matches[currIndex + 1]);
+    const currIndex = matchIDs.indexOf(latestMatch);
+    if (currIndex === matchIDs.length - 1) {
+      console.log("no more matchIDs")
+      return;
+    }
+    setLatestMatch(await getMatch(matchIDs[currIndex + 1]));
+
   }
 
   return (
     <div className="App">
       <Header />
-      <Buttons matches={matches} setMatches={setMatches} latestMatch={latestMatch} setLatestMatch={setLatestMatch} nextMatch={nextMatch} />
+      <Buttons matchIDs={matchIDs} setMatchIDs={setMatchIDs} latestMatch={latestMatch} setLatestMatch={setLatestMatch} nextMatch={nextMatch} />
       <div className="grid-container">
         <ChampIconList side="Blue" match={latestMatch}></ChampIconList>
-        <GuessBox match = {latestMatch} />
+        <GuessBox match={latestMatch} />
         <ChampIconList side="Red" match={latestMatch}></ChampIconList>
       </div>
     </div>

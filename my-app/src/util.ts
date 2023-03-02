@@ -17,7 +17,7 @@ async function getSummonerByName(name: string) {
     })
 }
 
-async function getMatchesFromPUUID(puuid: string, count: number) {
+async function getMatchIDsFromPUUID(puuid: string, count: number) {
     console.log("trying to fetch matches from puuid: " + puuid, "count: " + count)
     const url = process.env.REACT_APP_PROXY_URL + "https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/" + puuid + "/ids?start=0&count=" + count;
     console.log("url", url)
@@ -36,7 +36,7 @@ async function getMatchesFromPUUID(puuid: string, count: number) {
 }
 
 async function getMatch(matchID: string){
-    console.log("trying to fetch match: " + matchID)
+    console.log("trying to fetch match id: " + matchID)
     const url = process.env.REACT_APP_PROXY_URL + "https://europe.api.riotgames.com/lol/match/v5/matches/" + matchID;
     console.log("url", url)
     return await fetch(url, {
@@ -49,7 +49,7 @@ async function getMatch(matchID: string){
         }
     }).then(resp => resp.json())
     .then(function(match) {
-        console.log("match", match);
+        console.log("getMatch fetched match:", match);
         return match
     }).catch(function(error) {
         console.log(error);
@@ -57,6 +57,7 @@ async function getMatch(matchID: string){
 }
 
 function whichTeamWon(match: any){
+    console.log("checking winner team for match id: " + match.info.gameId)
     if (match.info.teams[0].win === true) {
         return "Blue"
     } else {
@@ -65,4 +66,4 @@ function whichTeamWon(match: any){
 }
     
 
-export {getSummonerByName, getMatchesFromPUUID, getMatch, whichTeamWon}
+export {getSummonerByName, getMatchIDsFromPUUID, getMatch, whichTeamWon}
