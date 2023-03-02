@@ -9,9 +9,10 @@ interface matchesProps {
   setMatches: (matches: string[]) => void;
   latestMatch: string;
   setLatestMatch: (latestMatch: string) => void;
+  nextMatch: () => void;
 }
 
-function Buttons({matches, setMatches, latestMatch, setLatestMatch}: matchesProps) {
+function Buttons({matches, setMatches, latestMatch, setLatestMatch, nextMatch}: matchesProps) {
   const [tier, setTier] = useState("Random Tier"); // idea: color change based on rank
   const [queue, setQueue] = useState("Ranked Solo/Duo"); // idea: color change based on queue
   const PUUID = process.env.REACT_APP_JACELIUS_PUUID || "";
@@ -56,7 +57,7 @@ function Buttons({matches, setMatches, latestMatch, setLatestMatch}: matchesProp
       </Dropdown>
 
       <Button onClick={() => getMatches()}> Fetch Jacelius' matches </Button>
-      <Button onClick={() => getMatch(matches[0])}> get Jacelius' latest match </Button>
+      <Button onClick={() => nextMatch()}> Next match </Button>
     </div>
   );
 }

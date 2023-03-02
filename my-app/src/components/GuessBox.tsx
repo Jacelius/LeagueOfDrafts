@@ -15,6 +15,7 @@ function GuessBox({ match } : GuessBoxProps) {
     const [incorrectCount, setIncorrectCount] = useState(0);
     return(
         <div className="guessBox">
+              <p>Which side won this match?</p>
            <Button variant="outline-primary" onClick={() => didPlayerWin("Blue")}> Blue </Button>
            <Button variant="outline-danger" onClick={() => didPlayerWin("Red")}> Red </Button> 
            <br></br>
