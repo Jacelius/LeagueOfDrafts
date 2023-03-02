@@ -32,9 +32,10 @@ function translateRole(role: string) {
             return "Bot"
         case "UTILITY":
             return "Support"
-    
+        case "Poro":
+            return "PoroPetter" 
         default:
-            return "unknown"
+            return "unknownRole"
     }
 }
 

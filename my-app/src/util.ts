@@ -66,6 +66,14 @@ function whichTeamWon(match: Match){
         return "Red"
     }
 }
+
+function matchIsARAM(match: Match){
+    if (match.info.gameMode === "ARAM") {
+        return true
+    } else {
+        return false
+    }
+}
     
 
-export {getSummonerByName, getMatchIDsFromPUUID, getMatch, whichTeamWon}
+export {getSummonerByName, getMatchIDsFromPUUID, getMatch, whichTeamWon, matchIsARAM}

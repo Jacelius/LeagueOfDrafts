@@ -1,7 +1,8 @@
 import ChampIcon from './ChampIcon';
 import '../style/champs.css';
 import { useState, useEffect } from 'react';
-import { getMatch } from '../util';
+import { Match } from '../types/Match';
+import { matchIsARAM } from '../util';
 
 interface ChampIconListProps {
     side: string;
@@ -17,7 +18,14 @@ function ChampIconList( {side, match} : ChampIconListProps) {
     useEffect(() => {
         if (match != null) {
             const champNames = getChampNamesFromMatch(match, side);
-            const roles = getRolesFromMatch(match, side); // TODO: put this in ChampIcon component
+            let roles: string[];
+            if (!matchIsARAM(match)) {
+                roles = getRolesFromMatch(match, side);
+                console.log("Roles", roles)
+            } else {
+                console.log("ARAM match")
+                roles = ["Poro", "Poro", "Poro", "Poro", "Poro"]
+            }
             const champIcons = champNames.map((champName, index) => {
                 return <ChampIcon key={champName} champName={champName} role={roles[index]}/>
             })
@@ -33,7 +41,7 @@ function ChampIconList( {side, match} : ChampIconListProps) {
         )
 }
 
-function getChampNamesFromMatch(match: any, side: string) {
+function getChampNamesFromMatch(match: Match, side: string) {
     // console.log("getChampNamesFromMatch match object", match)
     let champNames: string[] = [];
     if (side === "Blue") {
