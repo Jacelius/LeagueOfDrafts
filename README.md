@@ -5,6 +5,18 @@ A game about drafting in League of Legends. The goal is to guess the winner of a
 
 Planning to use Riot API to select a random game.
 
+## how to run locally
+
+at src
+
+```zsh
+node proxy.js
+```
+
+```zsh
+next dev
+```
+
 ## Steps needed
 
 * 1: API key needed to use Riot API - atm daily updates are needed
