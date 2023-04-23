@@ -17,6 +17,15 @@ node proxy.js
 npn dev
 ```
 
+## TODO
+
+- [ ] Add user system
+- [ ] Add database
+- [ ] Persistent API key
+- [ ] Add more details to match (eg. bans, pickorder..)
+- [ ] Add more stats to user
+- [ ] Add more stats to match
+
 ## Steps needed
 
 * 1: API key needed to use Riot API - atm daily updates are needed at <https://developer.riotgames.com/>
