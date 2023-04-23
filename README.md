@@ -14,12 +14,12 @@ node proxy.js
 ```
 
 ```zsh
-next dev
+npn dev
 ```
 
 ## Steps needed
 
-* 1: API key needed to use Riot API - atm daily updates are needed
+* 1: API key needed to use Riot API - atm daily updates are needed at <https://developer.riotgames.com/>
 * 2: Get "random" matches associated with given rank
 * 3: Know the winner of each match, but don't show that to user
 * 3b: Show more details of match (eg. bans, pickorder..)
