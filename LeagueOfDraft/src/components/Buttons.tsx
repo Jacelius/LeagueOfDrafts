@@ -15,7 +15,7 @@ interface matchIDsProps {
 function Buttons({matchIDs, setMatchIDs, latestMatch, setLatestMatch, nextMatch}: matchIDsProps) {
   const [tier, setTier] = useState("Random Tier"); // idea: color change based on rank
   const [queue, setQueue] = useState("Ranked Solo/Duo"); // idea: color change based on queue
-  const PUUID = process.env.REACT_APP_JACELIUS_PUUID || "";
+  const PUUID = import.meta.env.VITE_JACELIUS_PUUID || "";
   
   async function getMatchIDs() {
     const matchIDList = await getMatchIDsFromPUUID(PUUID, 20)

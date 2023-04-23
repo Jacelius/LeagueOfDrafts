@@ -1,13 +1,13 @@
 import { Match } from "./types/Match";
 
 async function getSummonerByName(name: string) {
-    const url = process.env.REACT_APP_PROXY_URL + "https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + name;
+    const url = import.meta.env.VITE_PROXY_URL + "https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + name;
     return await fetch(url, {
         method: "GET",
         headers: {
             "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7",
             "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
-            "X-Riot-Token": process.env.REACT_APP_RIOT_API_KEY || "",
+            "X-Riot-Token": import.meta.env.VITE_RIOT_API_KEY || "",
             "X-Requested-With": "XMLHttpRequest"
         }
     }).then(resp => resp.json())
@@ -20,13 +20,13 @@ async function getSummonerByName(name: string) {
 
 async function getMatchIDsFromPUUID(puuid: string, count: number) {
     console.log("trying to fetch matches from puuid: " + puuid, "count: " + count)
-    const url = process.env.REACT_APP_PROXY_URL + "https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/" + puuid + "/ids?start=0&count=" + count;
+    const url = import.meta.env.VITE_PROXY_URL + "https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/" + puuid + "/ids?start=0&count=" + count;
     return await fetch(url, {
         method: "GET",
         headers: {
             "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7",
             "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
-            "X-Riot-Token": process.env.REACT_APP_RIOT_API_KEY || "",
+            "X-Riot-Token": import.meta.env.VITE_RIOT_API_KEY || "",
             "X-Requested-With": "XMLHttpRequest"
         }
     }).then(resp => resp.json()).then(function(matches) {
@@ -37,13 +37,13 @@ async function getMatchIDsFromPUUID(puuid: string, count: number) {
 
 async function getMatch(matchID: string){
     console.log("trying to fetch match id: " + matchID)
-    const url = process.env.REACT_APP_PROXY_URL + "https://europe.api.riotgames.com/lol/match/v5/matches/" + matchID;
+    const url = import.meta.env.VITE_PROXY_URL + "https://europe.api.riotgames.com/lol/match/v5/matches/" + matchID;
     return await fetch(url, {
         method: "GET",
         headers: {
             "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7",
             "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
-            "X-Riot-Token": process.env.REACT_APP_RIOT_API_KEY || "",
+            "X-Riot-Token": import.meta.env.VITE_RIOT_API_KEY || "",
             "X-Requested-With": "XMLHttpRequest"
         }
     }).then(resp => resp.json())
