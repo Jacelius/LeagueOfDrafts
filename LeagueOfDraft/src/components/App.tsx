@@ -1,6 +1,7 @@
 import '../style/App.css';
 import Buttons from './Buttons';
 import ChampIconList from './ChampIconList';
+import ErrorBoundary from './ErrorBoundary';
 import GuessBox from './GuessBox';
 import Header from './Header';
 import { useState } from 'react';
@@ -29,13 +30,15 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <Buttons matchIDs={matchIDs} setMatchIDs={setMatchIDs} latestMatch={latestMatch} setLatestMatch={setLatestMatch} nextMatch={nextMatch} />
-      <div className="grid-container">
-        <ChampIconList side="Blue" match={latestMatch}></ChampIconList>
-        <GuessBox match={latestMatch} nextMatch={nextMatch}/>
-        <ChampIconList side="Red" match={latestMatch}></ChampIconList>
-      </div>
+      <ErrorBoundary fallback={<p>Something went wrong</p>}>
+        <Header />
+        <Buttons matchIDs={matchIDs} setMatchIDs={setMatchIDs} latestMatch={latestMatch} setLatestMatch={setLatestMatch} nextMatch={nextMatch} />
+        <div className="grid-container">
+          <ChampIconList side="Blue" match={latestMatch}></ChampIconList>
+          <GuessBox match={latestMatch} nextMatch={nextMatch}/>
+          <ChampIconList side="Red" match={latestMatch}></ChampIconList>
+        </div>
+      </ErrorBoundary>
     </div>
   );
 }

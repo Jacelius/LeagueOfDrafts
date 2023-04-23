@@ -1,16 +1,16 @@
 import React from 'react';
 class ErrorBoundary extends React.Component {
-    constructor(props) {
+    constructor(props: any) {
       super(props);
       this.state = { hasError: false };
     }
   
-    static getDerivedStateFromError(error) {
+    static getDerivedStateFromError(error: any) {
       // Update state so the next render will show the fallback UI.
       return { hasError: true };
     }
   
-    componentDidCatch(error, info) {
+    componentDidCatch(error: any, info: any) {
       // Example "componentStack":
       //   in ComponentThatThrows (created by App)
       //   in ErrorBoundary (created by App)
@@ -28,5 +28,4 @@ class ErrorBoundary extends React.Component {
       return this.props.children;
     }
   }
-
   export default ErrorBoundary;
