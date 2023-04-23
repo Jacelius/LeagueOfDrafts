@@ -19,6 +19,8 @@ npn dev
 
 ## TODO
 
+- [ ] Tailwind CSS
+- [ ] CSS GRID
 - [ ] Add user system
   - [ ] React Router
   - [ ] Add login
