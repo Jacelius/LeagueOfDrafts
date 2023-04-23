@@ -20,8 +20,16 @@ npn dev
 ## TODO
 
 - [ ] Add user system
+  - [ ] React Router
+  - [ ] Add login 
+  - [ ] Add register
 - [ ] Add database
 - [ ] Persistent API key
+- [ ] Options for match selection
+  - [ ] Select rank
+  - [ ] Select region
+  - [ ] Select patch
+  - [ ] Select queue
 - [ ] Add more details to match (eg. bans, pickorder..)
 - [ ] Add more stats to user
 - [ ] Add more stats to match
