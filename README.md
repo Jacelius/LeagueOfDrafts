@@ -19,6 +19,7 @@ npn dev
 
 ## TODO
 
+- [ ] Get actual random matches from Riot API
 - [ ] Tailwind CSS
 - [ ] CSS GRID
 - [ ] Add user system
@@ -33,8 +34,11 @@ npn dev
   - [ ] Select patch
   - [ ] Select queue
 - [ ] Add more details to match (eg. bans, pickorder..)
+  - [ ] sort by role
+
 - [ ] Add more stats to user
-- [ ] Add more stats to match
+- [ ] Add more stats to match (av)
+  - [] avg rank of game
 
 ## Steps needed
 

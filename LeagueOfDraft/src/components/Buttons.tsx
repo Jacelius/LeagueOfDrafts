@@ -50,6 +50,7 @@ function Buttons({matchIDs, setMatchIDs, latestMatch, setLatestMatch, nextMatch}
           {queue}
         </Dropdown.Toggle>
         <Dropdown.Menu>
+            <Dropdown.Item onClick={() => setQueue("Any Queue")}>Any Queue</Dropdown.Item>
             <Dropdown.Item onClick={() => setQueue("Normal")}>Normal</Dropdown.Item>
             <Dropdown.Item onClick={() => setQueue("Ranked Solo/Duo")}>Ranked Solo/Duo</Dropdown.Item>
             <Dropdown.Item onClick={() => setQueue("Ranked Flex")}>Ranked Flex</Dropdown.Item>
