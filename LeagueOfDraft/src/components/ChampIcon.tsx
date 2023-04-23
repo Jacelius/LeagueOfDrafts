@@ -9,7 +9,10 @@ function ChampIcon({champName, role}: ChampIconProps) {
     const champImgSrc = getChampImgSrc(champName);
     return (
         <div className="champ-icon">
-            <img src={champImgSrc} alt={champName}/>
+            <img src={champImgSrc} alt={champName} onError={({ currentTarget }) => {
+                currentTarget.onerror = null; // prevents looping
+                currentTarget.src="/assets/tiles/Gragas_1.jpg";
+            }}/>
             <p>{translateRole(role)} : {champName}</p>
         </div>
     );
@@ -17,6 +20,7 @@ function ChampIcon({champName, role}: ChampIconProps) {
 
 function getChampImgSrc(champName: string) { 
     const champImgSrc = "/assets/tiles/" + champName + "_0.jpg"; // _0 is added to use default champ image
+    // if champ image is not found in assets, use ? instead
     return champImgSrc; // alternative web source: "https://ddragon.leagueoflegends.com/cdn/9.21.1/img/champion/Ashe.png"
 }
 
