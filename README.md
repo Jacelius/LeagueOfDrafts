@@ -21,7 +21,7 @@ npn dev
 
 - [ ] Add user system
   - [ ] React Router
-  - [ ] Add login 
+  - [ ] Add login
   - [ ] Add register
 - [ ] Add database
 - [ ] Persistent API key
