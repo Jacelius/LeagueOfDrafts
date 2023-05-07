@@ -1,5 +1,5 @@
 import ChampIcon from './ChampIcon';
-import '../style/champs.css';
+import '../style/Champs.css';
 import { useState, useEffect } from 'react';
 import { Match } from '../types/Match';
 import { matchIsARAM } from '../util';
