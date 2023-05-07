@@ -7,15 +7,19 @@ Planning to use Riot API to select a random game.
 
 ## how to run locally
 
-at src
+frontend runs via vite from LeagueOfDraft/src
 
 ```zsh
 node proxy.js
 ```
 
 ```zsh
-npn dev
+npm dev
 ```
+
+api
+
+```zsh
 
 ## TODO
 
@@ -39,6 +43,11 @@ npn dev
 - [ ] Add more stats to user
 - [ ] Add more stats to match (av)
   - [] avg rank of game
+
+## bonus ideas
+
+[] - who got most kills
+[] - who got most deaths
 
 ## Steps needed
 

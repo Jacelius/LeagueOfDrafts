@@ -1,8 +1,9 @@
 .header{
     grid-area: header;
     background-color: #1a68c2;
+    height: 10vh;
     color: white;
-    padding: 20px;
+    padding: 1vh;
     margin-bottom: 5vh;
     text-align: center;
     font-family: 'Bruno Ace SC', cursive;
