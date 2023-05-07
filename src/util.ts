@@ -1,7 +1,7 @@
 import { Match } from "./types/Match";
 
 async function getSummonerByName(name: string) {
-    const url = import.meta.env.VITE_PROXY_URL + "https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + name;
+    const url = "https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + name;
     return await fetch(url, {
         method: "GET",
         headers: {
@@ -20,7 +20,7 @@ async function getSummonerByName(name: string) {
 
 async function getMatchIDsFromPUUID(puuid: string, count: number) {
     console.log("trying to fetch matches from puuid: " + puuid, "count: " + count)
-    const url = import.meta.env.VITE_PROXY_URL + "https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/" + puuid + "/ids?start=0&count=" + count;
+    const url = "https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/" + puuid + "/ids?start=0&count=" + count;
     return await fetch(url, {
         method: "GET",
         headers: {
@@ -37,7 +37,7 @@ async function getMatchIDsFromPUUID(puuid: string, count: number) {
 
 async function getMatch(matchID: string){
     console.log("trying to fetch match id: " + matchID)
-    const url = import.meta.env.VITE_PROXY_URL + "https://europe.api.riotgames.com/lol/match/v5/matches/" + matchID;
+    const url = "https://europe.api.riotgames.com/lol/match/v5/matches/" + matchID;
     return await fetch(url, {
         method: "GET",
         headers: {

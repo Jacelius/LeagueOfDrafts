@@ -27,7 +27,7 @@ function Buttons({matchIDs, setMatchIDs, latestMatch, setLatestMatch, nextMatch}
   return (
     <div className="buttons"> 
       <Dropdown>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
+        <Dropdown.Toggle className='maxHeight' variant="success" id="dropdown-basic">
           {tier}
         </Dropdown.Toggle>
         <Dropdown.Menu>
@@ -46,7 +46,7 @@ function Buttons({matchIDs, setMatchIDs, latestMatch, setLatestMatch, nextMatch}
       </Dropdown>
 
       <Dropdown>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
+        <Dropdown.Toggle className='maxHeight' variant="success" id="dropdown-basic">
           {queue}
         </Dropdown.Toggle>
         <Dropdown.Menu>

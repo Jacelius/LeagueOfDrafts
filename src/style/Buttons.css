@@ -1,5 +1,10 @@
 .buttons{
     display: flex;
     flex-direction: row;
+    height: 5vh;
     justify-content: center;
+}
+
+.maxHeight{
+    height: 100%;
 }
