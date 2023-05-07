@@ -15,7 +15,7 @@ interface matchIDsProps {
 function Buttons({matchIDs, setMatchIDs, latestMatch, setLatestMatch, nextMatch}: matchIDsProps) {
   const [tier, setTier] = useState("Random Tier"); // idea: color change based on rank
   const [queue, setQueue] = useState("Ranked Solo/Duo"); // idea: color change based on queue
-  const PUUID = import.meta.env.VITE_JACELIUS_PUUID || "";
+  const PUUID: string = import.meta.env.VITE_LIL_VIPER_PUUID || "";
   
   async function getMatchIDs() {
     const matchIDList = await getMatchIDsFromPUUID(PUUID, 20)
@@ -58,7 +58,7 @@ function Buttons({matchIDs, setMatchIDs, latestMatch, setLatestMatch, nextMatch}
           </Dropdown.Menu>
       </Dropdown>
 
-      <Button onClick={() => getMatchIDs()}> Fetch Jacelius' matchIDs </Button>
+      <Button onClick={() => getMatchIDs()}> Fetch Lil Viper' matchIDs </Button>
       <Button onClick={() => nextMatch()}> Next match </Button>
     </div>
   );

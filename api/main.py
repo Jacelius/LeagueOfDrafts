@@ -1,19 +1,29 @@
 from typing import Union
-import dotenv
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+import dotenv
 import os
 import requests
 
 app = FastAPI()
 dotenv.load_dotenv()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=['*'],
+    allow_credentials=True,
+    allow_methods=["GET"],
+    allow_headers=["*"],
+)
+
 riot_api_key = os.getenv("RIOT_API_KEY")
 if riot_api_key is None:
     raise Exception("No API key found in .env file")
 riot_base_url = "https://eun1.api.riotgames.com/lol/"
 
 @app.get("/")
-def read_root():
-    return {"Hello": "World"}
+async def main():
+    return {"message": "Hello World!"}
 
 
 @app.get("/summonerByName/{name}")
@@ -63,7 +73,6 @@ def get_match_by_id(match_id: str):
     }
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
-
         return response.json()
     else:
         error_text = response.json()["status"]["message"]
