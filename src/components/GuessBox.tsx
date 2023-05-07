@@ -45,8 +45,10 @@ function GuessBox({ match, nextMatch } : GuessBoxProps) {
     return(
         <div className="guessBox">
             <p>Which side won this match?</p>
-            <Button variant="outline-primary" onClick={() => didPlayerWin("Blue")}> Blue </Button>
-            <Button variant="outline-danger" onClick={() => didPlayerWin("Red")}> Red </Button> 
+            <div className='sideGridContainer'>
+                <Button variant="outline-primary" onClick={() => didPlayerWin("Blue")}> Blue </Button>
+                <Button variant="outline-danger" onClick={() => didPlayerWin("Red")}> Red </Button> 
+            </div>
             <br></br>
             <p id="correctCount">Correct Count: {correctCount}</p>
             <p id="incorrectCount">Incorrect Count: {incorrectCount}</p>

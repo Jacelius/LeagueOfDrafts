@@ -17,9 +17,11 @@ node proxy.js
 npm dev
 ```
 
-api
+run api locally from api/
 
 ```zsh
+uvicorn main:app --reload
+```
 
 ## TODO
 
