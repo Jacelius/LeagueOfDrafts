@@ -2,26 +2,14 @@ import { Match } from "./types/Match";
 
 async function getSummonerByName(name: string) {
     console.log("trying to fetch summoner by name: " + name)
-    const url = "http:/127.0.0.1:8000/summoner/" + name;
+    const url = "http://localhost:8000/summoner/" + name;
     return await fetch(url).then(response => response.json())
 }
 
 async function getMatchIDsFromPUUID(puuid: string, count: number) {
     console.log("trying to fetch matches from puuid: " + puuid)
     const url = "http://localhost:8000/getMatchIDsFromPUUID/" + puuid;
-    fetch(url, {
-        method: "GET",
-    })
-    .then((resp) => resp.text())
-    .then((text) => {
-      console.log("Response content:", text);
-      const data = JSON.parse(text);
-      console.log("Data:", data);
-      // Process the data as needed
-    })
-    .catch((err) => {
-      console.error("Error fetching data:", err);
-    });
+    return await fetch(url).then(response => response.json())
 }
 
 async function getMatch(matchID: string){
@@ -29,7 +17,7 @@ async function getMatch(matchID: string){
     if (matchID === "" || matchID === undefined) {
         return null
     }
-    const url = "http:/127.0.0.1:8000/match/" + matchID;
+    const url = "http://localhost:8000/match/" + matchID;
     return await fetch(url).then(response => response.json())
 }
 
