@@ -1,4 +1,4 @@
-import '../style/champs.css';
+import '../style/Champs.css';
 
 interface ChampIconProps {
     champName: string;
