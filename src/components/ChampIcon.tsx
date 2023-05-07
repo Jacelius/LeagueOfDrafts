@@ -11,7 +11,7 @@ function ChampIcon({champName, role}: ChampIconProps) {
         <div className="champ-icon">
             <img src={champImgSrc} alt={champName} onError={({ currentTarget }) => {
                 currentTarget.onerror = null; // prevents looping
-                currentTarget.src="/assets/tiles/Gragas_1.jpg";
+                currentTarget.src="/assets/tiles/Gragas_0.jpg";
             }}/>
             <p>{translateRole(role)} : {champName}</p>
         </div>
