@@ -6,10 +6,18 @@ import GuessBox from './GuessBox';
 import Header from './Header';
 import { useState } from 'react';
 import { getMatch } from '../util';
+import { atom, useAtom } from 'jotai'
 
 function App() {
   const [matchIDs, setMatchIDs] = useState<string[]>([]);
   const [latestMatch, setLatestMatch] = useState<any>(); // match object
+  const textAtom = atom('hello')
+  /* derived atom */
+  /*
+  const uppercaseAtom = atom(
+    (get) => get(textAtom).toUpperCase()
+  ) */
+  
   
   async function nextMatch() {
     // get index of latest match, and set latest match to the next match in the array
