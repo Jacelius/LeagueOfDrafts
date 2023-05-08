@@ -1,10 +1,13 @@
 .header{
     grid-area: header;
-    background-color: #1a68c2;
-    height: 10vh;
+    background-color: #a1b0d8;
     color: white;
     padding: 1vh;
     text-align: center;
     font-family: 'Bruno Ace SC', cursive;
     font-size: calc(1.25vw + 1.25vh + 1.25vmin);
+}
+
+.dark{
+    background-color: #2c2f3e;
 }

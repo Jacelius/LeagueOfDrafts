@@ -26,7 +26,7 @@ function Buttons({matchIDs, setMatchIDs, latestMatch, setLatestMatch, nextMatch}
 
   return (
     <div className="buttons"> 
-      <Dropdown>
+      {/* <Dropdown>
         <Dropdown.Toggle className='maxHeight' variant="success" id="dropdown-basic">
           {tier}
         </Dropdown.Toggle>
@@ -56,7 +56,7 @@ function Buttons({matchIDs, setMatchIDs, latestMatch, setLatestMatch, nextMatch}
             <Dropdown.Item onClick={() => setQueue("Ranked Flex")}>Ranked Flex</Dropdown.Item>
             <Dropdown.Item onClick={() => setQueue("ARAM")}>ARAM</Dropdown.Item>
           </Dropdown.Menu>
-      </Dropdown>
+      </Dropdown> */}
 
       <Button onClick={() => getMatchIDs()}> Fetch Lil Viper' matchIDs </Button>
       <Button onClick={() => nextMatch()}> Next match </Button>

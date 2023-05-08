@@ -1,8 +1,10 @@
+import { useAtom } from 'jotai';
 import '../style/Header.css';
-import { atom, useAtom } from 'jotai'
+import { textAtom, darkModeAtom } from './atoms';
 
 function Header() {
-    // const [textAtom] = useAtom(textAtom)
+    const [text, setTextAtom] = useAtom(textAtom);
+    const [darkMode, setDarkMode] = useAtom(darkModeAtom);
     return(
         <div className="header">
             League of Drafts
