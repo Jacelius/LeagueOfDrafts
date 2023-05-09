@@ -6,7 +6,7 @@ function Header() {
     const [text, setTextAtom] = useAtom(textAtom);
     const [darkMode, setDarkMode] = useAtom(darkModeAtom);
     return(
-        <div className="header">
+        <div className="header h-10vh">
             League of Drafts
         </div>
     )

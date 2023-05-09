@@ -33,7 +33,7 @@ function ChampIconList( {side, match} : ChampIconListProps) {
     }, [match]); 
 
     return (
-            <div className={"flex flex-col flex-wrap gap-4 items-center justify-center " + borderColor}>
+            <div className={"h-85vh flex flex-col flex-wrap gap-4 items-center justify-center " + borderColor}>
                 {champIcons}
             </div>  
         )
