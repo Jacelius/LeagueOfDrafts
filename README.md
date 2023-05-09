@@ -10,11 +10,7 @@ Planning to use Riot API to select a random game.
 frontend runs via vite from LeagueOfDraft/src
 
 ```zsh
-node proxy.js
-```
-
-```zsh
-npm dev
+npm run dev
 ```
 
 run api locally from api/

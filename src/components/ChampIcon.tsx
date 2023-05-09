@@ -8,13 +8,23 @@ interface ChampIconProps {
 function ChampIcon({champName, role}: ChampIconProps) {
     const champImgSrc = getChampImgSrc(champName);
     return (
-        <div className="champ-icon">
-            <img src={champImgSrc} alt={champName} onError={({ currentTarget }) => {
-                currentTarget.onerror = null; // prevents looping
-                currentTarget.src="/assets/tiles/Gragas_0.jpg";
-            }}/>
-            <p>{translateRole(role)} : {champName}</p>
-        </div>
+        <div className="flex items-center">
+      <div className="flex-shrink-0">
+        <img
+          className="mx-auto object-contain h-48 w-48"
+          src={champImgSrc}
+          alt={champName}
+          onError={({ currentTarget }) => {
+            currentTarget.onerror = null;
+            currentTarget.src = "/assets/tiles/Gragas_0.jpg";
+          }}
+        />
+      </div>
+      <div className="ml-4">
+        <p className="font-medium">{champName}</p>
+        <p className="text-gray-500">{translateRole(role)}</p>
+      </div>
+    </div>
     );
 }
 
